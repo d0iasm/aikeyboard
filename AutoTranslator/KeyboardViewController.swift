@@ -75,7 +75,7 @@ class KeyboardViewController: UIInputViewController {
             "messages": [
                 {
                     "role": "system",
-                    "content": "Translate the user text into English."
+                    "content": "Translate the user text into English. If the user's text is English, translate the text into Japanese."
                 },
                 {
                     "role": "user",
@@ -101,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
         let url = URL(string: OPENAI_URL)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
-        request.timeoutInterval = 5.0
+        request.timeoutInterval = 15.0
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
         request.httpBody = prompt.data(using: .utf8)

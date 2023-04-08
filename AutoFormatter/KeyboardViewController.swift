@@ -75,7 +75,7 @@ class KeyboardViewController: UIInputViewController {
         "messages": [
             {
                 "role": "system",
-                "content": "Rephrase the user's sentence or word to more naturay way grammatically."
+                "content": "ユーザーの文章を文法的に正しく、小学生でも分かるような文章に書き換えてください。語尾と口調は元の文章を維持してください。文字数はできる限り元の文章に近い範囲で収めてください。元の文章の言語は変えないでください。"
             },
             {
                 "role": "user",
@@ -101,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
         let url = URL(string: OPENAI_URL)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
-        request.timeoutInterval = 5.0
+        request.timeoutInterval = 15.0
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
         request.httpBody = prompt.data(using: .utf8)

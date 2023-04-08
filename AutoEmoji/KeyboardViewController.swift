@@ -29,40 +29,14 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),
         ])
         
-        for i in 0..<2 {
-            let rowStackView = UIStackView()
-            rowStackView.axis = .horizontal
-            rowStackView.alignment = .fill
-            rowStackView.distribution = .fillEqually
-            rowStackView.spacing = 8.0
-            stackView.addArrangedSubview(rowStackView)
-            
-            for j in 0..<3 {
-                let button = UIButton(type: .system)
-                button.setTitle("\(i*3+j+1)", for: .normal)
-                button.setTitleColor(.gray, for: .normal)
-                button.addTarget(self, action: #selector(sendRequestToOpenAI(sender:)), for: .touchUpInside)
-                button.backgroundColor = .white
-                button.layer.cornerRadius = 8.0
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 24.0)
-                rowStackView.addArrangedSubview(button)
-            }
-        }
-    }
-    
-    func getPromptFromTitle(title: String, userText: String) -> String {
-        if title == "1" {
-            return prompt_emoji(userText: userText)
-        } else if title == "2" {
-            return prompt_lovely_emoji(userText: userText)
-        } else if title == "3" {
-            return prompt_natural(userText: userText)
-        } else if title == "4" {
-            return prompt_s1(userText: userText)
-        } else if title == "5" {
-            return prompt_high_tension(userText: userText)
-        }
-        return ""
+        let button = UIButton(type: .system)
+        button.setTitle("emoji", for: .normal)
+        button.setTitleColor(.gray, for: .normal)
+        button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 8.0
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        stackView.addArrangedSubview(button)
     }
     
     func convertToDictionary(from jsonString: String) -> [String: Any]? {
@@ -77,59 +51,42 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
             return nil
         }
     }
-    
     /*
-     @objc func sendRequestToOpenAI(sender: UIButton) {
-     print("send a request to OpenAI API")
-     let selectedText = textDocumentProxy.selectedText
-     
-     if selectedText == nil {
-     return;
-     }
-     print("selected text: \(String(describing: selectedText))")
-     
-     var prompt = ""
-     if let title = sender.title(for: .normal) {
-     prompt = getPromptFromTitle(title: title)
-     }
-     if prompt == "" {
-     return;
-     }
-     
-     let data: [String: Any] =
-     ["model": "text-davinci-003",
-     "prompt": prompt + selectedText!,
-     ]
-     
-     print("prompt: \(String(describing: data["prompt"]))")
-     
-     let url = URL(string: OPENAI_URL)
-     var request = URLRequest(url: url!)
-     request.httpMethod = "POST"
-     request.timeoutInterval = 5.0
-     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-     request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
-     request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-     
-     print("request is sending \(String(describing: request))")
-     Task {
-     let (data, _) = try await URLSession.shared.data(for: request)
-     
-     if let dataString = String(data: data, encoding: .utf8) {
-     print("response data: \(dataString)")
-     
-     if let dictionary = convertToDictionary(from: dataString),
-     let choices = dictionary["choices"] as? [[String: Any]],
-     let text = choices.first?["text"] as? String {
-     print("Text: \(text)")
-     textDocumentProxy.insertText(text.trimmingCharacters(in: .whitespacesAndNewlines))
-     } else {
-     print("failed to parse response data")
-     }
-     }
-     }
-     }
-     */
+    func prompt_emoji(userText: String) -> String {
+        return """
+    {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {
+                "role": "system",
+                "content": "Insert suitable emoji(s) into the end and middle of user's sentence, and replace all periods and 句点 with suitable emoji(s). Do not modify the user's text and keep the original text. Do not add a white space between emojis."
+            },
+            {
+                "role": "user",
+                "content": "\(userText)"
+            }
+        ]
+    }
+    """
+    }*/
+    
+    func prompt_emoji(userText: String) -> String {
+        return """
+    {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {
+                "role": "system",
+                "content": "文面を元にユーザーの文章に適切な絵文字を挿入してください。文末に句読点がある場合は必ず置き換えてください。ユーザーの文章は絶対に書き換えないでください。"
+            },
+            {
+                "role": "user",
+                "content": "\(userText)"
+            }
+        ]
+    }
+    """
+    }
     
     @objc func sendRequestToOpenAI(sender: UIButton) {
         print("send a request to OpenAI API")
@@ -140,20 +97,13 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
         }
         print("selected text: \(String(describing: selectedText))")
         
-        var prompt = ""
-        if let title = sender.title(for: .normal) {
-            prompt = getPromptFromTitle(title: title, userText: selectedText!)
-        }
-        if prompt == "" {
-            return;
-        }
-        
+        let prompt = prompt_emoji(userText: selectedText!)
         print("data: \(prompt)")
         
         let url = URL(string: OPENAI_URL)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
-        request.timeoutInterval = 5.0
+        request.timeoutInterval = 15.0
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
         request.httpBody = prompt.data(using: .utf8)
