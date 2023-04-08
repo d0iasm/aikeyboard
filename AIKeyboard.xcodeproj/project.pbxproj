@@ -18,6 +18,7 @@
 		C4BB52FE29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */; };
 		C4BB531129E179EE0037C01B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB531029E179EE0037C01B /* KeyboardViewController.swift */; };
 		C4BB531529E179EE0037C01B /* AutoEmoji.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C4BB530E29E179EE0037C01B /* AutoEmoji.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4BB531F29E1FC530037C01B /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB531E29E1FC530037C01B /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		C4BB531229E179EE0037C01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4BB531A29E17A690037C01B /* AIKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AIKeyboard.entitlements; sourceTree = "<group>"; };
 		C4BB531B29E17A820037C01B /* AutoEmoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoEmoji.entitlements; sourceTree = "<group>"; };
+		C4BB531E29E1FC530037C01B /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				C4BB531B29E17A820037C01B /* AutoEmoji.entitlements */,
 				C4BB531029E179EE0037C01B /* KeyboardViewController.swift */,
 				C4BB531229E179EE0037C01B /* Info.plist */,
+				C4BB531E29E1FC530037C01B /* Prompt.swift */,
 			);
 			path = AutoEmoji;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4BB531129E179EE0037C01B /* KeyboardViewController.swift in Sources */,
+				C4BB531F29E1FC530037C01B /* Prompt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,25 +7,11 @@
 
 import UIKit
 
-let OPENAI_URL = "https://api.openai.com/v1/completions"
+// let OPENAI_URL = "https://api.openai.com/v1/completions"
+let OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 let OPENAI_API_KEY = ""
 
 class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        /*
-        let heightConstraint = NSLayoutConstraint(item:self.view as Any,
-                                                  attribute: .height,
-                                                  relatedBy: .equal,
-                                                  toItem: nil,
-                                                  attribute: .notAnAttribute,
-                                                  multiplier: 0.0,
-                                                  constant: 200.0)
-        view.addConstraint(heightConstraint)
-         */
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,13 +45,28 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
                 let button = UIButton(type: .system)
                 button.setTitle("\(i*3+j+1)", for: .normal)
                 button.setTitleColor(.gray, for: .normal)
-                button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
+                button.addTarget(self, action: #selector(sendRequestToOpenAI(sender:)), for: .touchUpInside)
                 button.backgroundColor = .white
                 button.layer.cornerRadius = 8.0
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 24.0)
                 rowStackView.addArrangedSubview(button)
             }
         }
+    }
+    
+    func getPromptFromTitle(title: String, userText: String) -> String {
+        if title == "1" {
+            return prompt_emoji(userText: userText)
+        } else if title == "2" {
+            return prompt_lovely_emoji(userText: userText)
+        } else if title == "3" {
+            return prompt_natural(userText: userText)
+        } else if title == "4" {
+            return prompt_s1(userText: userText)
+        } else if title == "5" {
+            return prompt_high_tension(userText: userText)
+        }
+        return ""
     }
     
     func convertToDictionary(from jsonString: String) -> [String: Any]? {
@@ -81,37 +82,77 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func sendRequestToOpenAI() {
+    /*
+     @objc func sendRequestToOpenAI(sender: UIButton) {
+     print("send a request to OpenAI API")
+     let selectedText = textDocumentProxy.selectedText
+     
+     if selectedText == nil {
+     return;
+     }
+     print("selected text: \(String(describing: selectedText))")
+     
+     var prompt = ""
+     if let title = sender.title(for: .normal) {
+     prompt = getPromptFromTitle(title: title)
+     }
+     if prompt == "" {
+     return;
+     }
+     
+     let data: [String: Any] =
+     ["model": "text-davinci-003",
+     "prompt": prompt + selectedText!,
+     ]
+     
+     print("prompt: \(String(describing: data["prompt"]))")
+     
+     let url = URL(string: OPENAI_URL)
+     var request = URLRequest(url: url!)
+     request.httpMethod = "POST"
+     request.timeoutInterval = 5.0
+     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+     request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
+     request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+     
+     print("request is sending \(String(describing: request))")
+     Task {
+     let (data, _) = try await URLSession.shared.data(for: request)
+     
+     if let dataString = String(data: data, encoding: .utf8) {
+     print("response data: \(dataString)")
+     
+     if let dictionary = convertToDictionary(from: dataString),
+     let choices = dictionary["choices"] as? [[String: Any]],
+     let text = choices.first?["text"] as? String {
+     print("Text: \(text)")
+     textDocumentProxy.insertText(text.trimmingCharacters(in: .whitespacesAndNewlines))
+     } else {
+     print("failed to parse response data")
+     }
+     }
+     }
+     }
+     */
+    
+    @objc func sendRequestToOpenAI(sender: UIButton) {
         print("send a request to OpenAI API")
         let selectedText = textDocumentProxy.selectedText
         
         if selectedText == nil {
             return;
         }
-        
         print("selected text: \(String(describing: selectedText))")
         
-        let data: [String: Any] =
-        ["model": "text-davinci-003",
-         //["model": "gpt-3.5-turbo",
-         "prompt": #"""
-Replace the following the sentence or word with the one with nice Emojis. Please follow the 4 rules below:
-
-1) Put emoji(s) at the end of each sentence
-2) Always replace 。 with some emojis
-3) Do not delete any words from the original sentence
-4) Do not insert additional new lines
-
-Sentence:
-"""# + selectedText!,
-         //"temperature": 0.3,
-         //"max_tokens": 100,
-         //"top_p": "1.0",
-         //"frequency_penalty": "0.0",
-         //"presence_penalty": "0.0",
-        ]
+        var prompt = ""
+        if let title = sender.title(for: .normal) {
+            prompt = getPromptFromTitle(title: title, userText: selectedText!)
+        }
+        if prompt == "" {
+            return;
+        }
         
-        print("prompt: \(String(describing: data["prompt"]))")
+        print("data: \(prompt)")
         
         let url = URL(string: OPENAI_URL)
         var request = URLRequest(url: url!)
@@ -119,25 +160,25 @@ Sentence:
         request.timeoutInterval = 5.0
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        request.httpBody = prompt.data(using: .utf8)
         
         print("request is sending \(String(describing: request))")
         Task {
             let (data, _) = try await URLSession.shared.data(for: request)
             
             if let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string: \(dataString)")
+                print("response data: \(dataString)")
                 
                 if let dictionary = convertToDictionary(from: dataString),
                    let choices = dictionary["choices"] as? [[String: Any]],
-                   let text = choices.first?["text"] as? String {
+                   let result = choices.first?["message"] as? [String: Any],
+                   let text = result["content"] as? String {
                     print("Text: \(text)")
                     textDocumentProxy.insertText(text.trimmingCharacters(in: .whitespacesAndNewlines))
                 } else {
-                    print("Failed to parse choices or text from the response data.")
+                    print("failed to parse response data")
                 }
             }
         }
     }
-
 }
