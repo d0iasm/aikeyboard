@@ -28,9 +28,70 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
     
     @objc func sendRequest() {
         print("sendRequest!")
+        let selectedText = textDocumentProxy.selectedText
+        
+        let OPENAI_URL = "https://api.openai.com/v1/completions"
+        let OPENAI_API_KEY = ""
+        
+        if selectedText == nil {
+            return;
+        }
+        
+        print("selectedText \(String(describing: selectedText))")
+        
+        let data: [String: Any] =
+        ["model": "text-davinci-003",
+         "prompt": "Find a best emoji from the sentence: " + selectedText!,
+         "temperature": "0.3",
+         "max_tokens": "100",
+         "top_p": "1.0",
+         "frequency_penalty": "0.0",
+         "presence_penalty": "0.0",
+        ]
+        
+        let url = URL(string: OPENAI_URL)
+        //let url = URL(string: "https://example.com")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 5.0
+        request.setValue("Content-Type", forHTTPHeaderField: "application/json")
+        request.setValue("Authorization", forHTTPHeaderField: OPENAI_API_KEY)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        
+        print("request is sending \(String(describing: request))")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print("dataTask is finished")
+            
+            // Check for Error
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            // Convert HTTP Response Data to a String
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string:\n \(dataString)")
+            }
+        }
+        task.resume()
+        
+        /*
+         Task {
+         let (data, response) = try await URLSession.shared.data(for: request)
+         
+         let body = response.body
+         
+         print("data \(data)")
+         print("response \(response)")
+         }
+         */
     }
     
     override func viewDidLoad() {
+        let keyboardType = textDocumentProxy.keyboardType
+        print("viewDidLoad \(String(describing: keyboardType))")
+        
         super.viewDidLoad()
         
         setupToolBar()
