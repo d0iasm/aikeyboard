@@ -7,23 +7,65 @@
 
 import UIKit
 
+let OPENAI_URL = "https://api.openai.com/v1/completions"
+let OPENAI_API_KEY = ""
+
 class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
-    
-    @IBOutlet var nextKeyboardButton: UIButton!
-    @IBOutlet var toolBar: UIToolbar!
-    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
-        // Add custom view sizing constraints here
+        /*
+        let heightConstraint = NSLayoutConstraint(item:self.view as Any,
+                                                  attribute: .height,
+                                                  relatedBy: .equal,
+                                                  toItem: nil,
+                                                  attribute: .notAnAttribute,
+                                                  multiplier: 0.0,
+                                                  constant: 200.0)
+        view.addConstraint(heightConstraint)
+         */
     }
     
-    func setupToolBar(){
-        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
-        self.toolBar.sizeToFit()
-        let testButton = UIBarButtonItem(title: "insert emoji", style:.plain, target: nil, action: #selector(sendRequest))
-        self.toolBar.setItems([testButton], animated: false)
-        self.view.addSubview(self.toolBar)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupButtons()
+    }
+    
+    func setupButtons() {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8.0
+        self.view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),
+        ])
+        
+        for i in 0..<2 {
+            let rowStackView = UIStackView()
+            rowStackView.axis = .horizontal
+            rowStackView.alignment = .fill
+            rowStackView.distribution = .fillEqually
+            rowStackView.spacing = 8.0
+            stackView.addArrangedSubview(rowStackView)
+            
+            for j in 0..<3 {
+                let button = UIButton(type: .system)
+                button.setTitle("\(i*3+j+1)", for: .normal)
+                button.setTitleColor(.gray, for: .normal)
+                button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
+                button.backgroundColor = .white
+                button.layer.cornerRadius = 8.0
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 24.0)
+                rowStackView.addArrangedSubview(button)
+            }
+        }
     }
     
     func convertToDictionary(from jsonString: String) -> [String: Any]? {
@@ -39,24 +81,21 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func sendRequest() {
-        print("sendRequest!")
+    @objc func sendRequestToOpenAI() {
+        print("send a request to OpenAI API")
         let selectedText = textDocumentProxy.selectedText
-        
-        let OPENAI_URL = "https://api.openai.com/v1/completions"
-        let OPENAI_API_KEY = ""
         
         if selectedText == nil {
             return;
         }
         
-        print("selectedText \(String(describing: selectedText))")
+        print("selected text: \(String(describing: selectedText))")
         
         let data: [String: Any] =
-        //["model": "text-davinci-003",
-        ["model": "gpt-3.5-turbo",
+        ["model": "text-davinci-003",
+         //["model": "gpt-3.5-turbo",
          "prompt": #"""
-Replace the following the sentence with the one with nice Emojis. Please follow the 4 rules below:
+Replace the following the sentence or word with the one with nice Emojis. Please follow the 4 rules below:
 
 1) Put emoji(s) at the end of each sentence
 2) Always replace 。 with some emojis
@@ -75,7 +114,6 @@ Sentence:
         print("prompt: \(String(describing: data["prompt"]))")
         
         let url = URL(string: OPENAI_URL)
-        //let url = URL(string: "https://example.com")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.timeoutInterval = 5.0
@@ -84,7 +122,6 @@ Sentence:
         request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
         
         print("request is sending \(String(describing: request))")
-        
         Task {
             let (data, _) = try await URLSession.shared.data(for: request)
             
@@ -95,62 +132,12 @@ Sentence:
                    let choices = dictionary["choices"] as? [[String: Any]],
                    let text = choices.first?["text"] as? String {
                     print("Text: \(text)")
-                    textDocumentProxy.insertText(text)
+                    textDocumentProxy.insertText(text.trimmingCharacters(in: .whitespacesAndNewlines))
                 } else {
                     print("Failed to parse choices or text from the response data.")
                 }
             }
         }
     }
-    
-    override func viewDidLoad() {
-        let keyboardType = textDocumentProxy.keyboardType
-        print("viewDidLoad \(String(describing: keyboardType))")
-        
-        super.viewDidLoad()
-        
-        setupToolBar()
-        
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
-    
-    override func viewWillLayoutSubviews() {
-        //self.nextKeyboardButton.isHidden = !self.needsInputModeSwitchKey
-        super.viewWillLayoutSubviews()
-    }
-    
-    override func textWillChange(_ textInput: UITextInput?) {
-        print("textWillChange \(String(describing: textInput))")
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        print("textDidChange \(String(describing: textInput))")
-        let selectedText = textDocumentProxy.selectedText
-        print("textDidChange \(String(describing: selectedText))")
-        //textDocumentProxy.insertText("Hello world.")
-        // The app has just changed the document's contents, the document context has been updated.
-        
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
-        }
-        self.nextKeyboardButton.setTitleColor(textColor, for: [])
-    }
-    
+
 }
