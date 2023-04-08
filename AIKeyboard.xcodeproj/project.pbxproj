@@ -16,6 +16,8 @@
 		C4BB52F229E179D40037C01B /* AIKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52F129E179D40037C01B /* AIKeyboardTests.swift */; };
 		C4BB52FC29E179D40037C01B /* AIKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52FB29E179D40037C01B /* AIKeyboardUITests.swift */; };
 		C4BB52FE29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */; };
+		C4BB531129E179EE0037C01B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB531029E179EE0037C01B /* KeyboardViewController.swift */; };
+		C4BB531529E179EE0037C01B /* AutoEmoji.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C4BB530E29E179EE0037C01B /* AutoEmoji.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,28 @@
 			remoteGlobalIDString = C4BB52D729E179D30037C01B;
 			remoteInfo = AIKeyboard;
 		};
+		C4BB531329E179EE0037C01B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4BB530D29E179EE0037C01B;
+			remoteInfo = AutoEmoji;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C4BB531929E179EE0037C01B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C4BB531529E179EE0037C01B /* AutoEmoji.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C4BB52D829E179D30037C01B /* AIKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +71,11 @@
 		C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BB52FB29E179D40037C01B /* AIKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardUITests.swift; sourceTree = "<group>"; };
 		C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4BB530E29E179EE0037C01B /* AutoEmoji.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoEmoji.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4BB531029E179EE0037C01B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C4BB531229E179EE0037C01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4BB531A29E17A690037C01B /* AIKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AIKeyboard.entitlements; sourceTree = "<group>"; };
+		C4BB531B29E17A820037C01B /* AutoEmoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoEmoji.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +100,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4BB530B29E179EE0037C01B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,6 +116,7 @@
 				C4BB52DA29E179D30037C01B /* AIKeyboard */,
 				C4BB52F029E179D40037C01B /* AIKeyboardTests */,
 				C4BB52FA29E179D40037C01B /* AIKeyboardUITests */,
+				C4BB530F29E179EE0037C01B /* AutoEmoji */,
 				C4BB52D929E179D30037C01B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +127,7 @@
 				C4BB52D829E179D30037C01B /* AIKeyboard.app */,
 				C4BB52ED29E179D40037C01B /* AIKeyboardTests.xctest */,
 				C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */,
+				C4BB530E29E179EE0037C01B /* AutoEmoji.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +135,7 @@
 		C4BB52DA29E179D30037C01B /* AIKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				C4BB531A29E17A690037C01B /* AIKeyboard.entitlements */,
 				C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */,
 				C4BB52DD29E179D30037C01B /* ContentView.swift */,
 				C4BB52DF29E179D40037C01B /* Assets.xcassets */,
@@ -133,6 +171,16 @@
 			path = AIKeyboardUITests;
 			sourceTree = "<group>";
 		};
+		C4BB530F29E179EE0037C01B /* AutoEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB531B29E17A820037C01B /* AutoEmoji.entitlements */,
+				C4BB531029E179EE0037C01B /* KeyboardViewController.swift */,
+				C4BB531229E179EE0037C01B /* Info.plist */,
+			);
+			path = AutoEmoji;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,10 +191,12 @@
 				C4BB52D429E179D30037C01B /* Sources */,
 				C4BB52D529E179D30037C01B /* Frameworks */,
 				C4BB52D629E179D30037C01B /* Resources */,
+				C4BB531929E179EE0037C01B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C4BB531429E179EE0037C01B /* PBXTargetDependency */,
 			);
 			name = AIKeyboard;
 			productName = AIKeyboard;
@@ -189,6 +239,23 @@
 			productReference = C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C4BB530D29E179EE0037C01B /* AutoEmoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4BB531629E179EE0037C01B /* Build configuration list for PBXNativeTarget "AutoEmoji" */;
+			buildPhases = (
+				C4BB530A29E179EE0037C01B /* Sources */,
+				C4BB530B29E179EE0037C01B /* Frameworks */,
+				C4BB530C29E179EE0037C01B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoEmoji;
+			productName = AutoEmoji;
+			productReference = C4BB530E29E179EE0037C01B /* AutoEmoji.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,6 +277,9 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = C4BB52D729E179D30037C01B;
 					};
+					C4BB530D29E179EE0037C01B = {
+						CreatedOnToolsVersion = 14.3;
+					};
 				};
 			};
 			buildConfigurationList = C4BB52D329E179D30037C01B /* Build configuration list for PBXProject "AIKeyboard" */;
@@ -228,6 +298,7 @@
 				C4BB52D729E179D30037C01B /* AIKeyboard */,
 				C4BB52EC29E179D40037C01B /* AIKeyboardTests */,
 				C4BB52F629E179D40037C01B /* AIKeyboardUITests */,
+				C4BB530D29E179EE0037C01B /* AutoEmoji */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +321,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C4BB52F529E179D40037C01B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB530C29E179EE0037C01B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,6 +365,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4BB530A29E179EE0037C01B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BB531129E179EE0037C01B /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -299,6 +385,11 @@
 			isa = PBXTargetDependency;
 			target = C4BB52D729E179D30037C01B /* AIKeyboard */;
 			targetProxy = C4BB52F829E179D40037C01B /* PBXContainerItemProxy */;
+		};
+		C4BB531429E179EE0037C01B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4BB530D29E179EE0037C01B /* AutoEmoji */;
+			targetProxy = C4BB531329E179EE0037C01B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,8 +511,10 @@
 		C4BB530229E179D40037C01B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIKeyboard/AIKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AIKeyboard/Preview Content\"";
@@ -433,6 +526,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,8 +543,10 @@
 		C4BB530329E179D40037C01B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIKeyboard/AIKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AIKeyboard/Preview Content\"";
@@ -462,6 +558,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,6 +648,58 @@
 			};
 			name = Release;
 		};
+		C4BB531729E179EE0037C01B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoEmoji/AutoEmoji.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoEmoji/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoEmoji;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoEmoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4BB531829E179EE0037C01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoEmoji/AutoEmoji.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoEmoji/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoEmoji;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoEmoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,6 +735,15 @@
 			buildConfigurations = (
 				C4BB530829E179D40037C01B /* Debug */,
 				C4BB530929E179D40037C01B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4BB531629E179EE0037C01B /* Build configuration list for PBXNativeTarget "AutoEmoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4BB531729E179EE0037C01B /* Debug */,
+				C4BB531829E179EE0037C01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
