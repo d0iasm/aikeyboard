@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C46A977629E2137800CB4F73 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977529E2137800CB4F73 /* Environment.swift */; };
+		C46A977E29E2147800CB4F73 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */; };
+		C46A978229E2147800CB4F73 /* AutoFormatter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C46A977B29E2147800CB4F73 /* AutoFormatter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C46A978829E215CF00CB4F73 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A978729E215CF00CB4F73 /* Environment.swift */; };
+		C46A979429E217B000CB4F73 /* test.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C46A978D29E217B000CB4F73 /* test.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C46A979F29E21B8700CB4F73 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A979E29E21B8700CB4F73 /* KeyboardViewController.swift */; };
+		C46A97A329E21B8700CB4F73 /* AutoTranslator.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C46A979C29E21B8700CB4F73 /* AutoTranslator.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C46A97A829E21BA100CB4F73 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A97A729E21BA100CB4F73 /* Environment.swift */; };
 		C4BB52DC29E179D30037C01B /* AIKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */; };
 		C4BB52DE29E179D30037C01B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52DD29E179D30037C01B /* ContentView.swift */; };
 		C4BB52E029E179D40037C01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4BB52DF29E179D40037C01B /* Assets.xcassets */; };
@@ -23,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C46A978029E2147800CB4F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C46A977A29E2147800CB4F73;
+			remoteInfo = AutoFormatter;
+		};
+		C46A979229E217B000CB4F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C46A978C29E217B000CB4F73;
+			remoteInfo = test;
+		};
+		C46A97A129E21B8700CB4F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C46A979B29E21B8700CB4F73;
+			remoteInfo = AutoTranslator;
+		};
 		C4BB52EE29E179D40037C01B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
@@ -53,7 +81,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				C46A979429E217B000CB4F73 /* test.appex in Embed Foundation Extensions */,
+				C46A978229E2147800CB4F73 /* AutoFormatter.appex in Embed Foundation Extensions */,
 				C4BB531529E179EE0037C01B /* AutoEmoji.appex in Embed Foundation Extensions */,
+				C46A97A329E21B8700CB4F73 /* AutoTranslator.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +93,17 @@
 
 /* Begin PBXFileReference section */
 		C46A977529E2137800CB4F73 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C46A977B29E2147800CB4F73 /* AutoFormatter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoFormatter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C46A977F29E2147800CB4F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C46A978629E214A500CB4F73 /* AutoFormatter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoFormatter.entitlements; sourceTree = "<group>"; };
+		C46A978729E215CF00CB4F73 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C46A978D29E217B000CB4F73 /* test.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = test.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46A979C29E21B8700CB4F73 /* AutoTranslator.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoTranslator.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46A979E29E21B8700CB4F73 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C46A97A029E21B8700CB4F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C46A97A729E21BA100CB4F73 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C46A97A929E21C1800CB4F73 /* AutoTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoTranslator.entitlements; sourceTree = "<group>"; };
 		C4BB52D829E179D30037C01B /* AIKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardApp.swift; sourceTree = "<group>"; };
 		C4BB52DD29E179D30037C01B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +125,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C46A977829E2147800CB4F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A978A29E217B000CB4F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A979929E21B8700CB4F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4BB52D529E179D30037C01B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +177,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C46A977C29E2147800CB4F73 /* AutoFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				C46A978629E214A500CB4F73 /* AutoFormatter.entitlements */,
+				C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */,
+				C46A977F29E2147800CB4F73 /* Info.plist */,
+				C46A978729E215CF00CB4F73 /* Environment.swift */,
+			);
+			path = AutoFormatter;
+			sourceTree = "<group>";
+		};
+		C46A979D29E21B8700CB4F73 /* AutoTranslator */ = {
+			isa = PBXGroup;
+			children = (
+				C46A97A929E21C1800CB4F73 /* AutoTranslator.entitlements */,
+				C46A979E29E21B8700CB4F73 /* KeyboardViewController.swift */,
+				C46A97A029E21B8700CB4F73 /* Info.plist */,
+				C46A97A729E21BA100CB4F73 /* Environment.swift */,
+			);
+			path = AutoTranslator;
+			sourceTree = "<group>";
+		};
 		C4BB52CF29E179D30037C01B = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +206,8 @@
 				C4BB52F029E179D40037C01B /* AIKeyboardTests */,
 				C4BB52FA29E179D40037C01B /* AIKeyboardUITests */,
 				C4BB530F29E179EE0037C01B /* AutoEmoji */,
+				C46A977C29E2147800CB4F73 /* AutoFormatter */,
+				C46A979D29E21B8700CB4F73 /* AutoTranslator */,
 				C4BB52D929E179D30037C01B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,6 +219,9 @@
 				C4BB52ED29E179D40037C01B /* AIKeyboardTests.xctest */,
 				C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */,
 				C4BB530E29E179EE0037C01B /* AutoEmoji.appex */,
+				C46A977B29E2147800CB4F73 /* AutoFormatter.appex */,
+				C46A978D29E217B000CB4F73 /* test.appex */,
+				C46A979C29E21B8700CB4F73 /* AutoTranslator.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +280,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C46A977A29E2147800CB4F73 /* AutoFormatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C46A978329E2147800CB4F73 /* Build configuration list for PBXNativeTarget "AutoFormatter" */;
+			buildPhases = (
+				C46A977729E2147800CB4F73 /* Sources */,
+				C46A977829E2147800CB4F73 /* Frameworks */,
+				C46A977929E2147800CB4F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoFormatter;
+			productName = AutoFormatter;
+			productReference = C46A977B29E2147800CB4F73 /* AutoFormatter.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C46A978C29E217B000CB4F73 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C46A979529E217B000CB4F73 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				C46A978929E217B000CB4F73 /* Sources */,
+				C46A978A29E217B000CB4F73 /* Frameworks */,
+				C46A978B29E217B000CB4F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = C46A978D29E217B000CB4F73 /* test.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C46A979B29E21B8700CB4F73 /* AutoTranslator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C46A97A429E21B8700CB4F73 /* Build configuration list for PBXNativeTarget "AutoTranslator" */;
+			buildPhases = (
+				C46A979829E21B8700CB4F73 /* Sources */,
+				C46A979929E21B8700CB4F73 /* Frameworks */,
+				C46A979A29E21B8700CB4F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoTranslator;
+			productName = AutoTranslator;
+			productReference = C46A979C29E21B8700CB4F73 /* AutoTranslator.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C4BB52D729E179D30037C01B /* AIKeyboard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4BB530129E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboard" */;
@@ -203,6 +344,9 @@
 			);
 			dependencies = (
 				C4BB531429E179EE0037C01B /* PBXTargetDependency */,
+				C46A978129E2147800CB4F73 /* PBXTargetDependency */,
+				C46A979329E217B000CB4F73 /* PBXTargetDependency */,
+				C46A97A229E21B8700CB4F73 /* PBXTargetDependency */,
 			);
 			name = AIKeyboard;
 			productName = AIKeyboard;
@@ -272,6 +416,15 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					C46A977A29E2147800CB4F73 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C46A978C29E217B000CB4F73 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C46A979B29E21B8700CB4F73 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					C4BB52D729E179D30037C01B = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -305,11 +458,35 @@
 				C4BB52EC29E179D40037C01B /* AIKeyboardTests */,
 				C4BB52F629E179D40037C01B /* AIKeyboardUITests */,
 				C4BB530D29E179EE0037C01B /* AutoEmoji */,
+				C46A977A29E2147800CB4F73 /* AutoFormatter */,
+				C46A978C29E217B000CB4F73 /* test */,
+				C46A979B29E21B8700CB4F73 /* AutoTranslator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C46A977929E2147800CB4F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A978B29E217B000CB4F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A979A29E21B8700CB4F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4BB52D629E179D30037C01B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +520,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C46A977729E2147800CB4F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C46A977E29E2147800CB4F73 /* KeyboardViewController.swift in Sources */,
+				C46A978829E215CF00CB4F73 /* Environment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A978929E217B000CB4F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46A979829E21B8700CB4F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C46A979F29E21B8700CB4F73 /* KeyboardViewController.swift in Sources */,
+				C46A97A829E21BA100CB4F73 /* Environment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4BB52D429E179D30037C01B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +586,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C46A978129E2147800CB4F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C46A977A29E2147800CB4F73 /* AutoFormatter */;
+			targetProxy = C46A978029E2147800CB4F73 /* PBXContainerItemProxy */;
+		};
+		C46A979329E217B000CB4F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C46A978C29E217B000CB4F73 /* test */;
+			targetProxy = C46A979229E217B000CB4F73 /* PBXContainerItemProxy */;
+		};
+		C46A97A229E21B8700CB4F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C46A979B29E21B8700CB4F73 /* AutoTranslator */;
+			targetProxy = C46A97A129E21B8700CB4F73 /* PBXContainerItemProxy */;
+		};
 		C4BB52EF29E179D40037C01B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4BB52D729E179D30037C01B /* AIKeyboard */;
@@ -402,6 +619,166 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C46A978429E2147800CB4F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoFormatter/AutoFormatter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoFormatter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoFormatter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoFormatter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C46A978529E2147800CB4F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoFormatter/AutoFormatter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoFormatter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoFormatter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoFormatter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C46A979629E217B000CB4F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = test;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C46A979729E217B000CB4F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = test;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C46A97A529E21B8700CB4F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoTranslator/AutoTranslator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoTranslator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoTranslator;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoTranslator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C46A97A629E21B8700CB4F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AutoTranslator/AutoTranslator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoTranslator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AutoTranslator;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard.AutoTranslator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C4BB52FF29E179D40037C01B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,7 +966,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,7 +986,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,6 +1088,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C46A978329E2147800CB4F73 /* Build configuration list for PBXNativeTarget "AutoFormatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C46A978429E2147800CB4F73 /* Debug */,
+				C46A978529E2147800CB4F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C46A979529E217B000CB4F73 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C46A979629E217B000CB4F73 /* Debug */,
+				C46A979729E217B000CB4F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C46A97A429E21B8700CB4F73 /* Build configuration list for PBXNativeTarget "AutoTranslator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C46A97A529E21B8700CB4F73 /* Debug */,
+				C46A97A629E21B8700CB4F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C4BB52D329E179D30037C01B /* Build configuration list for PBXProject "AIKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
