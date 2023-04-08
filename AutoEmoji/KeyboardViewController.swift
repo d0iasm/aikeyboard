@@ -7,10 +7,6 @@
 
 import UIKit
 
-// let OPENAI_URL = "https://api.openai.com/v1/completions"
-let OPENAI_URL = "https://api.openai.com/v1/chat/completions"
-let OPENAI_API_KEY = ""
-
 class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
