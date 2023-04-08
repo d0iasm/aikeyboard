@@ -26,6 +26,19 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
         self.view.addSubview(self.toolBar)
     }
     
+    func convertToDictionary(from jsonString: String) -> [String: Any]? {
+        guard let data = jsonString.data(using: .utf8) else {
+            return nil
+        }
+        
+        do {
+            return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        } catch {
+            print("Error converting to dictionary: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     @objc func sendRequest() {
         print("sendRequest!")
         let selectedText = textDocumentProxy.selectedText
@@ -40,52 +53,54 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
         print("selectedText \(String(describing: selectedText))")
         
         let data: [String: Any] =
-        ["model": "text-davinci-003",
-         "prompt": "Find a best emoji from the sentence: " + selectedText!,
-         "temperature": "0.3",
-         "max_tokens": "100",
-         "top_p": "1.0",
-         "frequency_penalty": "0.0",
-         "presence_penalty": "0.0",
+        //["model": "text-davinci-003",
+        ["model": "gpt-3.5-turbo",
+         "prompt": #"""
+Replace the following the sentence with the one with nice Emojis. Please follow the 4 rules below:
+
+1) Put emoji(s) at the end of each sentence
+2) Always replace 。 with some emojis
+3) Do not delete any words from the original sentence
+4) Do not insert additional new lines
+
+Sentence:
+"""# + selectedText!,
+         //"temperature": 0.3,
+         //"max_tokens": 100,
+         //"top_p": "1.0",
+         //"frequency_penalty": "0.0",
+         //"presence_penalty": "0.0",
         ]
+        
+        print("prompt: \(String(describing: data["prompt"]))")
         
         let url = URL(string: OPENAI_URL)
         //let url = URL(string: "https://example.com")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.timeoutInterval = 5.0
-        request.setValue("Content-Type", forHTTPHeaderField: "application/json")
-        request.setValue("Authorization", forHTTPHeaderField: OPENAI_API_KEY)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer " + OPENAI_API_KEY, forHTTPHeaderField: "Authorization")
         request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
         
         print("request is sending \(String(describing: request))")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            print("dataTask is finished")
+        Task {
+            let (data, _) = try await URLSession.shared.data(for: request)
             
-            // Check for Error
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            
-            // Convert HTTP Response Data to a String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
+            if let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string: \(dataString)")
+                
+                if let dictionary = convertToDictionary(from: dataString),
+                   let choices = dictionary["choices"] as? [[String: Any]],
+                   let text = choices.first?["text"] as? String {
+                    print("Text: \(text)")
+                    textDocumentProxy.insertText(text)
+                } else {
+                    print("Failed to parse choices or text from the response data.")
+                }
             }
         }
-        task.resume()
-        
-        /*
-         Task {
-         let (data, response) = try await URLSession.shared.data(for: request)
-         
-         let body = response.body
-         
-         print("data \(data)")
-         print("response \(response)")
-         }
-         */
     }
     
     override func viewDidLoad() {
