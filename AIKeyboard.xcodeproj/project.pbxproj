@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4BB52DC29E179D30037C01B /* AIKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */; };
+		C4BB52DE29E179D30037C01B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52DD29E179D30037C01B /* ContentView.swift */; };
+		C4BB52E029E179D40037C01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4BB52DF29E179D40037C01B /* Assets.xcassets */; };
+		C4BB52E329E179D40037C01B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4BB52E229E179D40037C01B /* Preview Assets.xcassets */; };
+		C4BB52E529E179D40037C01B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52E429E179D40037C01B /* Persistence.swift */; };
+		C4BB52E829E179D40037C01B /* AIKeyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52E629E179D40037C01B /* AIKeyboard.xcdatamodeld */; };
+		C4BB52F229E179D40037C01B /* AIKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52F129E179D40037C01B /* AIKeyboardTests.swift */; };
+		C4BB52FC29E179D40037C01B /* AIKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52FB29E179D40037C01B /* AIKeyboardUITests.swift */; };
+		C4BB52FE29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4BB52EE29E179D40037C01B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4BB52D729E179D30037C01B;
+			remoteInfo = AIKeyboard;
+		};
+		C4BB52F829E179D40037C01B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4BB52D029E179D30037C01B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4BB52D729E179D30037C01B;
+			remoteInfo = AIKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4BB52D829E179D30037C01B /* AIKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardApp.swift; sourceTree = "<group>"; };
+		C4BB52DD29E179D30037C01B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C4BB52DF29E179D40037C01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4BB52E229E179D40037C01B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C4BB52E429E179D40037C01B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C4BB52E729E179D40037C01B /* AIKeyboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AIKeyboard.xcdatamodel; sourceTree = "<group>"; };
+		C4BB52ED29E179D40037C01B /* AIKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4BB52F129E179D40037C01B /* AIKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardTests.swift; sourceTree = "<group>"; };
+		C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4BB52FB29E179D40037C01B /* AIKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardUITests.swift; sourceTree = "<group>"; };
+		C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKeyboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4BB52D529E179D30037C01B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52EA29E179D40037C01B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52F429E179D40037C01B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4BB52CF29E179D30037C01B = {
+			isa = PBXGroup;
+			children = (
+				C4BB52DA29E179D30037C01B /* AIKeyboard */,
+				C4BB52F029E179D40037C01B /* AIKeyboardTests */,
+				C4BB52FA29E179D40037C01B /* AIKeyboardUITests */,
+				C4BB52D929E179D30037C01B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4BB52D929E179D30037C01B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB52D829E179D30037C01B /* AIKeyboard.app */,
+				C4BB52ED29E179D40037C01B /* AIKeyboardTests.xctest */,
+				C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4BB52DA29E179D30037C01B /* AIKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */,
+				C4BB52DD29E179D30037C01B /* ContentView.swift */,
+				C4BB52DF29E179D40037C01B /* Assets.xcassets */,
+				C4BB52E429E179D40037C01B /* Persistence.swift */,
+				C4BB52E629E179D40037C01B /* AIKeyboard.xcdatamodeld */,
+				C4BB52E129E179D40037C01B /* Preview Content */,
+			);
+			path = AIKeyboard;
+			sourceTree = "<group>";
+		};
+		C4BB52E129E179D40037C01B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB52E229E179D40037C01B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C4BB52F029E179D40037C01B /* AIKeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB52F129E179D40037C01B /* AIKeyboardTests.swift */,
+			);
+			path = AIKeyboardTests;
+			sourceTree = "<group>";
+		};
+		C4BB52FA29E179D40037C01B /* AIKeyboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB52FB29E179D40037C01B /* AIKeyboardUITests.swift */,
+				C4BB52FD29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift */,
+			);
+			path = AIKeyboardUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4BB52D729E179D30037C01B /* AIKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4BB530129E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboard" */;
+			buildPhases = (
+				C4BB52D429E179D30037C01B /* Sources */,
+				C4BB52D529E179D30037C01B /* Frameworks */,
+				C4BB52D629E179D30037C01B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIKeyboard;
+			productName = AIKeyboard;
+			productReference = C4BB52D829E179D30037C01B /* AIKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4BB52EC29E179D40037C01B /* AIKeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4BB530429E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboardTests" */;
+			buildPhases = (
+				C4BB52E929E179D40037C01B /* Sources */,
+				C4BB52EA29E179D40037C01B /* Frameworks */,
+				C4BB52EB29E179D40037C01B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4BB52EF29E179D40037C01B /* PBXTargetDependency */,
+			);
+			name = AIKeyboardTests;
+			productName = AIKeyboardTests;
+			productReference = C4BB52ED29E179D40037C01B /* AIKeyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4BB52F629E179D40037C01B /* AIKeyboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4BB530729E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboardUITests" */;
+			buildPhases = (
+				C4BB52F329E179D40037C01B /* Sources */,
+				C4BB52F429E179D40037C01B /* Frameworks */,
+				C4BB52F529E179D40037C01B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4BB52F929E179D40037C01B /* PBXTargetDependency */,
+			);
+			name = AIKeyboardUITests;
+			productName = AIKeyboardUITests;
+			productReference = C4BB52F729E179D40037C01B /* AIKeyboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4BB52D029E179D30037C01B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C4BB52D729E179D30037C01B = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C4BB52EC29E179D40037C01B = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C4BB52D729E179D30037C01B;
+					};
+					C4BB52F629E179D40037C01B = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C4BB52D729E179D30037C01B;
+					};
+				};
+			};
+			buildConfigurationList = C4BB52D329E179D30037C01B /* Build configuration list for PBXProject "AIKeyboard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4BB52CF29E179D30037C01B;
+			productRefGroup = C4BB52D929E179D30037C01B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4BB52D729E179D30037C01B /* AIKeyboard */,
+				C4BB52EC29E179D40037C01B /* AIKeyboardTests */,
+				C4BB52F629E179D40037C01B /* AIKeyboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4BB52D629E179D30037C01B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BB52E329E179D40037C01B /* Preview Assets.xcassets in Resources */,
+				C4BB52E029E179D40037C01B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52EB29E179D40037C01B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52F529E179D40037C01B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4BB52D429E179D30037C01B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BB52E529E179D40037C01B /* Persistence.swift in Sources */,
+				C4BB52DE29E179D30037C01B /* ContentView.swift in Sources */,
+				C4BB52E829E179D40037C01B /* AIKeyboard.xcdatamodeld in Sources */,
+				C4BB52DC29E179D30037C01B /* AIKeyboardApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52E929E179D40037C01B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BB52F229E179D40037C01B /* AIKeyboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BB52F329E179D40037C01B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BB52FC29E179D40037C01B /* AIKeyboardUITests.swift in Sources */,
+				C4BB52FE29E179D40037C01B /* AIKeyboardUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4BB52EF29E179D40037C01B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4BB52D729E179D30037C01B /* AIKeyboard */;
+			targetProxy = C4BB52EE29E179D40037C01B /* PBXContainerItemProxy */;
+		};
+		C4BB52F929E179D40037C01B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4BB52D729E179D30037C01B /* AIKeyboard */;
+			targetProxy = C4BB52F829E179D40037C01B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C4BB52FF29E179D40037C01B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C4BB530029E179D40037C01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4BB530229E179D40037C01B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIKeyboard/Preview Content\"";
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4BB530329E179D40037C01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIKeyboard/Preview Content\"";
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C4BB530529E179D40037C01B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIKeyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIKeyboard";
+			};
+			name = Debug;
+		};
+		C4BB530629E179D40037C01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIKeyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIKeyboard";
+			};
+			name = Release;
+		};
+		C4BB530829E179D40037C01B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIKeyboard;
+			};
+			name = Debug;
+		};
+		C4BB530929E179D40037C01B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TMFTYXG38Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.keyboard.AIKeyboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIKeyboard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4BB52D329E179D30037C01B /* Build configuration list for PBXProject "AIKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4BB52FF29E179D40037C01B /* Debug */,
+				C4BB530029E179D40037C01B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4BB530129E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4BB530229E179D40037C01B /* Debug */,
+				C4BB530329E179D40037C01B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4BB530429E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4BB530529E179D40037C01B /* Debug */,
+				C4BB530629E179D40037C01B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4BB530729E179D40037C01B /* Build configuration list for PBXNativeTarget "AIKeyboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4BB530829E179D40037C01B /* Debug */,
+				C4BB530929E179D40037C01B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4BB52E629E179D40037C01B /* AIKeyboard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4BB52E729E179D40037C01B /* AIKeyboard.xcdatamodel */,
+			);
+			currentVersion = C4BB52E729E179D40037C01B /* AIKeyboard.xcdatamodel */;
+			path = AIKeyboard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C4BB52D029E179D30037C01B /* Project object */;
+}
