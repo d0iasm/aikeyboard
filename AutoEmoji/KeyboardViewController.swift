@@ -7,26 +7,10 @@
 
 import UIKit
 
-extension UITextField {
-    func addInputAccessoryView(title: String, target: Any, selector: Selector) {
-        
-        let toolBar = UIToolbar(frame: CGRect(x: 0.0,
-                                              y: 0.0,
-                                              width: UIScreen.main.bounds.size.width,
-                                              height: 44.0))//1
-        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)//2
-        let barButton = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)//3
-        toolBar.setItems([flexible, barButton], animated: false)//4
-        self.inputAccessoryView = toolBar//5
-    }
-}
-
 class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
     
     @IBOutlet var nextKeyboardButton: UIButton!
-    @IBOutlet var testButton: UIButton!
     @IBOutlet var toolBar: UIToolbar!
-    @IBOutlet weak var textField: UITextField!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -35,70 +19,21 @@ class KeyboardViewController: UIInputViewController, UITextFieldDelegate {
     }
     
     func setupToolBar(){
-        let dragButton = UIButton()
-        dragButton.backgroundColor = .red
-        dragButton.frame = CGRect(x: 0, y: 0, width: 80, height: 4)
-        dragButton.contentMode = .scaleAspectFit
-        dragButton.setBackgroundImage(UIImage(named: "drag"), for: .normal)
-        
-        
-        // So here we do some stuff with the toolBar
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100))
-        toolBar.barTintColor = .clear
-        toolBar.setBackgroundImage(UIImage(), forToolbarPosition: UIBarPosition.any, barMetrics: UIBarMetrics.default)
-        toolBar.setShadowImage(UIImage(), forToolbarPosition: UIBarPosition.any)
-        toolBar.backgroundColor = .white
-        toolBar.isOpaque = false
-        
-        //The flexible space helps to arrange things inside the toolBar
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        
-        let ourButton = UIBarButtonItem.init(customView: dragButton)
-        
-        // we added 2 flexible spaces to keep are button at the center of the toolBar
-        toolBar.setItems([flexibleSpace, ourButton, flexibleSpace], animated: true)
-        // and we add our toolBar with our UIButton above our someTextField keyboard)
-        self.textField.inputAccessoryView = toolBar
+        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        self.toolBar.sizeToFit()
+        let testButton = UIBarButtonItem(title: "insert emoji", style:.plain, target: nil, action: #selector(sendRequest))
+        self.toolBar.setItems([testButton], animated: false)
+        self.view.addSubview(self.toolBar)
     }
     
-    @objc func tapDone() {
-        self.view.endEditing(true)
+    @objc func sendRequest() {
+        print("sendRequest!")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.textField = UITextField()
-        //self.textField.delegate = self
-        //self.textField.addInputAccessoryView(title: "Done", target: self, selector: #selector(tapDone))
-        
-        /*
-         self.toolBar = UIToolbar()
-         self.toolBar.barStyle = .default
-         self.toolBar.isTranslucent = true
-         self.toolBar.tintColor = UIColor(red: 76 / 255, green: 217 / 255, blue: 100 / 255, alpha: 1)
-         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: nil)
-         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: nil)
-         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-         self.toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-         
-         self.toolBar.isUserInteractionEnabled = true
-         self.toolBar.sizeToFit()
-         
-         self.view.addSubview(self.toolBar)
-         self.toolBar.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-         self.toolBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-         */
-        //setupToolBar()
-        
-        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
-        self.toolBar.sizeToFit()
-        let testButton = UIBarButtonItem(title: "insert emoji", style:.plain, target: nil, action: nil)
-        //self.view.addSubview(testButton)
-        //testButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        //testButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.toolBar.setItems([testButton], animated: false)
-        self.view.addSubview(self.toolBar)
+        setupToolBar()
         
         // Perform custom UI setup here
         self.nextKeyboardButton = UIButton(type: .system)
