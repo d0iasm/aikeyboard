@@ -41,7 +41,6 @@ struct ContentView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: geo.size.width * 0.9, alignment: .center)
-                            
                             NavigationLink(destination: DescriptionView()) {
                                 Text("How to Use")
                                     .foregroundColor(.white)
@@ -77,7 +76,7 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }.buttonStyle(.plain)
+                                }
                             }.frame(width: geo.size.width * 0.8)
                         }
                         ZStack{
@@ -108,9 +107,8 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }.buttonStyle(.plain)
+                                }
                             }.frame(width: geo.size.width * 0.8)
-                            
                         }
                         ZStack{
                             Image("bg_formatter")
@@ -140,7 +138,7 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }.buttonStyle(.plain)
+                                }
                             }.frame(width: geo.size.width * 0.8)
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
