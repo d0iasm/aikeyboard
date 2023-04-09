@@ -84,7 +84,7 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }
+                                }.buttonStyle(.plain)
                             }.frame(width: geo.size.width * 0.8)
                         }
                         ZStack{
@@ -115,7 +115,7 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }
+                                }.buttonStyle(.plain)
                             }.frame(width: geo.size.width * 0.8)
                             
                         }
@@ -147,7 +147,7 @@ struct ContentView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 20))
                                     }
-                                }
+                                }.buttonStyle(.plain)
                             }.frame(width: geo.size.width * 0.8)
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
