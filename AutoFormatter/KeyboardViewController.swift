@@ -6,53 +6,49 @@
 //
 
 import UIKit
+import AudioToolbox
+
+let BUTTON_DIAMETER = 330;
 
 class KeyboardViewController: UIInputViewController {
-    
-    @IBOutlet var button: UIButton!
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        NSLayoutConstraint(item: self.view!,
+                           attribute: .height,
+                           relatedBy: .equal,
+                           toItem: nil,
+                           attribute: .notAnAttribute,
+                           multiplier: 0.0,
+                           constant: 200).isActive = true
+    }
     
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1)
         setupButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func setupButton() {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        self.view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),
-        ])
+        //self.view.translatesAutoresizingMaskIntoConstraints = false
         
-        self.button = UIButton(frame: CGRect(x: 0, y: 0, width: 400, height: 200))
-        self.button.setTitle("format", for: .normal)
-        self.button.setTitleColor(.gray, for: .normal)
-        self.button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
-        //self.button.sizeToFit()
-        //self.button.translatesAutoresizingMaskIntoConstraints = false
-        self.button.backgroundColor = .white
-        self.button.layer.cornerRadius = 8.0
-        self.button.titleLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(button)
+        button.frame = CGRect(x: 0, y: 0, width: BUTTON_DIAMETER, height: BUTTON_DIAMETER)
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchDown)
+        button.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
+        button.addTarget(self, action: #selector(animateUp), for: [.touchUpOutside, .touchCancel, .touchDragExit, .touchUpInside])
         
-        stackView.addArrangedSubview(self.button)
+        let icon = UIImage(named: "icon_256.png")
+        button.setImage(icon, for: .normal)
         
-        //self.button.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        //self.button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        /*
-        NSLayoutConstraint.activate([
-            self.button.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
-            self.button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
-            self.button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
-            self.button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0),
-        ])
-         */
+        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = false
     }
     
     func convertToDictionary(from jsonString: String) -> [String: Any]? {
@@ -67,7 +63,7 @@ class KeyboardViewController: UIInputViewController {
             return nil
         }
     }
-    
+        
     func prompt_natural(userText: String) -> String {
         return """
     {
@@ -85,8 +81,38 @@ class KeyboardViewController: UIInputViewController {
     }
     """
     }
-
-    @objc func sendRequestToOpenAI() {
+    
+    private func animate(_ button: UIButton, transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.2,
+                       delay: 0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 5,
+                       options: [.curveEaseInOut],
+                       animations: {
+            button.transform = transform
+        }, completion: nil)
+    }
+    
+    @objc func orientationDidChange() {
+        if UIDevice.current.orientation.isLandscape {
+            print("横向き")
+        } else if UIDevice.current.orientation.isPortrait {
+            print("縦向き")
+        }
+    }
+    
+    @objc private func animateDown(sender: UIButton) {
+        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9))
+    }
+    
+    @objc private func animateUp(sender: UIButton) {
+        animate(sender, transform: .identity)
+    }
+    
+    @objc func sendRequestToOpenAI(sender: UIButton) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        
         print("send a request to OpenAI API")
         let selectedText = textDocumentProxy.selectedText
         

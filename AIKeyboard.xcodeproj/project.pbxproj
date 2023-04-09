@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C41BF82629E3182600561C9A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41BF82529E3182600561C9A /* DescriptionView.swift */; };
+		C41BF82A29E35E6500561C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41BF82929E35E6500561C9A /* Assets.xcassets */; };
+		C41BF82C29E35E9000561C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41BF82B29E35E9000561C9A /* Assets.xcassets */; };
 		C46A977629E2137800CB4F73 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977529E2137800CB4F73 /* Environment.swift */; };
 		C46A977E29E2147800CB4F73 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */; };
 		C46A978229E2147800CB4F73 /* AutoFormatter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C46A977B29E2147800CB4F73 /* AutoFormatter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -85,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		C41BF82529E3182600561C9A /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionView.swift; path = ../DescriptionView.swift; sourceTree = "<group>"; };
+		C41BF82929E35E6500561C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C41BF82B29E35E9000561C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C46A977529E2137800CB4F73 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C46A977B29E2147800CB4F73 /* AutoFormatter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoFormatter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */,
 				C46A977F29E2147800CB4F73 /* Info.plist */,
 				C46A978729E215CF00CB4F73 /* Environment.swift */,
+				C41BF82929E35E6500561C9A /* Assets.xcassets */,
 			);
 			path = AutoFormatter;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				C46A979E29E21B8700CB4F73 /* KeyboardViewController.swift */,
 				C46A97A029E21B8700CB4F73 /* Info.plist */,
 				C46A97A729E21BA100CB4F73 /* Environment.swift */,
+				C41BF82B29E35E9000561C9A /* Assets.xcassets */,
 			);
 			path = AutoTranslator;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41BF82A29E35E6500561C9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41BF82C29E35E9000561C9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
