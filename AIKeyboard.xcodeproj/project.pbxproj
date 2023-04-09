@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C41BF82629E3182600561C9A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41BF82529E3182600561C9A /* DescriptionView.swift */; };
 		C46A977629E2137800CB4F73 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977529E2137800CB4F73 /* Environment.swift */; };
 		C46A977E29E2147800CB4F73 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */; };
 		C46A978229E2147800CB4F73 /* AutoFormatter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C46A977B29E2147800CB4F73 /* AutoFormatter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -83,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C41BF82529E3182600561C9A /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionView.swift; path = ../DescriptionView.swift; sourceTree = "<group>"; };
 		C46A977529E2137800CB4F73 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C46A977B29E2147800CB4F73 /* AutoFormatter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoFormatter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46A977D29E2147800CB4F73 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				C4BB531A29E17A690037C01B /* AIKeyboard.entitlements */,
 				C4BB52DB29E179D30037C01B /* AIKeyboardApp.swift */,
 				C4BB52DD29E179D30037C01B /* ContentView.swift */,
+				C41BF82529E3182600561C9A /* DescriptionView.swift */,
 				C4BB52DF29E179D40037C01B /* Assets.xcassets */,
 				C4BB52E429E179D40037C01B /* Persistence.swift */,
 				C4BB52E629E179D40037C01B /* AIKeyboard.xcdatamodeld */,
@@ -500,6 +503,7 @@
 				C4BB52DE29E179D30037C01B /* ContentView.swift in Sources */,
 				C4BB52E829E179D40037C01B /* AIKeyboard.xcdatamodeld in Sources */,
 				C4BB52DC29E179D30037C01B /* AIKeyboardApp.swift in Sources */,
+				C41BF82629E3182600561C9A /* DescriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

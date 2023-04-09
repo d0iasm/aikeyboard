@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import AudioToolbox
 
 let BUTTON_DIAMETER = 300;
 
 class KeyboardViewController: UIInputViewController {
     override func updateViewConstraints() {
-        print("update view constraints===============================")
         super.updateViewConstraints()
         
         NSLayoutConstraint(item: self.view!,
@@ -24,15 +24,15 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
-        
         setupButton()
         
-        self.view.layoutIfNeeded()
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func setupButton() {
-        self.view.translatesAutoresizingMaskIntoConstraints = false
+        //self.view.translatesAutoresizingMaskIntoConstraints = false
         
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -41,40 +41,15 @@ class KeyboardViewController: UIInputViewController {
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
         let icon = UIImage(named: "icon1_256.png")
+        //let icon2 = UIImage(named: "icon2_256.png")
+        
+        //let icon3 = UIImage(named: "icon2_236.png")
         button.setImage(icon, for: .normal)
-        //button.setImage(icon, for: .highlighted)
-        //button.setImage(icon, for: .selected)
-        
-        //button.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: button.center.y)
-        
-        //button.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        
-        /*
-        NSLayoutConstraint.activate([
-            //button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
-            button.widthAnchor.constraint(equalToConstant: 150),
-            button.heightAnchor.constraint(equalToConstant: 150)
-        ])
-        
-        let constraint = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        constraint.constant = UIScreen.main.bounds.width / 2
-        self.view.layoutIfNeeded()
-         */
-        
-        /*
-         NSLayoutConstraint.activate([
-         button.topAnchor.constraint(equalTo: view.topAnchor, constant: 10.0),
-         button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10.0),
-         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10.0),
-         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 10.0),
-         ])
-         */
-        //button.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2)
-        //button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        //button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        //stackView.addArrangedSubview(button)
+        //button.setImage(icon3, for: .highlighted)
+        //button.setImage(icon3, for: .selected)
+
+        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = false
     }
     
     func convertToDictionary(from jsonString: String) -> [String: Any]? {
@@ -108,7 +83,22 @@ class KeyboardViewController: UIInputViewController {
     """
     }
     
+    @objc func orientationDidChange() {
+        if UIDevice.current.orientation.isLandscape {
+            print("横向き")
+        } else if UIDevice.current.orientation.isPortrait {
+            print("縦向き")
+        }
+    }
+    
     @objc func sendRequestToOpenAI(sender: UIButton) {
+        //AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        //let generator = UIImpactFeedbackGenerator(style: .light)
+        // generator.impactOccurred()
+        
         print("send a request to OpenAI API")
         let selectedText = textDocumentProxy.selectedText
         

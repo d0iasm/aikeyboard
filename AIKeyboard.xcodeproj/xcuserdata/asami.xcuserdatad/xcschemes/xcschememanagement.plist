@@ -7,27 +7,50 @@
 		<key>AIKeyboard.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>AutoEmoji.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>AutoFormatter.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>AutoTranslator.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<key>test.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C46A977A29E2147800CB4F73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C46A979B29E21B8700CB4F73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4BB52D729E179D30037C01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4BB530D29E179EE0037C01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
