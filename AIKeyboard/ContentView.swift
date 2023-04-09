@@ -46,7 +46,7 @@ struct ContentView: View {
                                     .foregroundColor(.white)
                                     .bold()
                                     .font(.system(size: 24))
-                            }
+                            }.navigationBarBackButtonHidden(true)
                         }
                         ZStack{
                             Image("bg_emoji")
@@ -145,7 +145,7 @@ struct ContentView: View {
                         .edgesIgnoringSafeArea(.all)
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

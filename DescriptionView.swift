@@ -72,15 +72,16 @@ struct DescriptionView: View {
                                             .font(.system(size: 20))
                                     }
                                 }.navigationDestination(isPresented: $shouldMoveToMainPage) {
-                                    ContentView()
-                                }
+                                    ContentView().navigationBarBackButtonHidden(true)
+                                }.navigationBarBackButtonHidden(true)
+                                    .navigationBarHidden(true)
                             }.frame(width: geo.size.width * 0.7)
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                         .edgesIgnoringSafeArea(.all)
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 
