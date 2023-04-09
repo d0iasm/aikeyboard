@@ -19,32 +19,139 @@ struct ContentView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 GeometryReader { geo in
-                    VStack {
+                    VStack (alignment: .leading) {
                         HStack {
-                            Text("AI Keyboard")
+                            Image("title").resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.35)
                             Spacer()
-                            Text("Privacy")
-                            Text("Terms")
-                            //NavigationLink(destination: Text("Second View"), tag: "Second", selection: $selection) { EmptyView() }
-                            //NavigationLink(destination: Text("third View"), tag: "Second", selection: $selection) { EmptyView() }
+                        }.frame(width: geo.size.width * 0.7)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    HStack(spacing: 0) {
+                                        NavigationLink(destination: DescriptionView()) {
+                                            Text("Privacy")
+                                                .font(.headline)
+                                                .foregroundColor(.accentColor)
+                                        }
+                                        NavigationLink(destination: DescriptionView()) {
+                                            Text("Terms")
+                                                .font(.headline)
+                                                .foregroundColor(.accentColor)
+                                        }
+                                    }
+                                }
+                            }
+                        ZStack{
+                            
+                            Image("background_howtouse")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9, alignment: .center)
+                            
+                            NavigationLink(destination: DescriptionView()) {
+                                Text("How to Use")
+                                    .foregroundColor(.white)
+                                    .bold()
+                                    .font(.system(size: 24))
+                            }
                         }
-                        Image("background_howtouse")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geo.size.width * 0.9, alignment: .center)
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.white)
-                            .frame(width: geo.size.width * 0.9, height: 100, alignment: .center)
-                        
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.white)
-                            .frame(width: geo.size.width * 0.9, height: 100, alignment: .center)
-                        
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.white)
-                            .frame(width: geo.size.width * 0.9, height: 100, alignment: .center)
+                        ZStack{
+                            Image("bg_emoji")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9, alignment: .center)
+                            VStack (alignment: .leading,
+                                    spacing: 10){
+                                Text("絵文字キーボード")
+                                    .foregroundColor(.black)
+                                    .bold()
+                                    .font(.system(size: 20))
+                                Text("あなたの文章をAIが読み込んで勝手に絵文字を追加します！絵文字があるだけでチャットでの印象が大きく変わるかも！？")
+                                    .font(.system(size: 16))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                Button(action: {
+                                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                    }
+                                }) {
+                                    ZStack{
+                                        Image("btn_pink")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                        Text("キーボードを追加")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 20))
+                                    }
+                                }
+                            }.frame(width: geo.size.width * 0.8)
+                        }
+                        ZStack{
+                            Image("bg_translater")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9, alignment: .center)
+                            VStack (alignment: .leading,
+                                    spacing: 10){
+                                Text("日本語→英語キーボード")
+                                    .foregroundColor(.black)
+                                    .bold()
+                                    .font(.system(size: 24))
+                                Text("もう翻訳アプリを立ち上げる必要なし！日本語で打った文章がボタン一つでネイティブの英語に変わります！")
+                                    .font(.system(size: 16))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                Button(action: {
+                                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                    }
+                                }) {
+                                    ZStack{
+                                        Image("btn_blue")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                        Text("キーボードを追加")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 20))
+                                    }
+                                }
+                            }.frame(width: geo.size.width * 0.8)
+                            
+                        }
+                        ZStack{
+                            Image("bg_formatter")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9, alignment: .center)
+                            VStack (alignment: .leading,
+                                    spacing: 10){
+                                Text("伝わるキーボード")
+                                    .foregroundColor(.black)
+                                    .bold()
+                                    .font(.system(size: 24))
+                                Text("仕事の文章や長文をわかりやすく伝えよう！誰にでも分かりやすく、論理的に、文章を作り直します。")
+                                    .font(.system(size: 16))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                Button(action: {
+                                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                    }
+                                }) {
+                                    ZStack{
+                                        Image("btn_yellow")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                        Text("キーボードを追加")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 20))
+                                    }
+                                }
+                            }.frame(width: geo.size.width * 0.8)
+                        }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                     .edgesIgnoringSafeArea(.all)
+                        .edgesIgnoringSafeArea(.all)
                 }
             }
         }
