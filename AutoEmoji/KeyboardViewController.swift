@@ -88,10 +88,10 @@ class KeyboardViewController: UIInputViewController {
     }
     
     private func animate(_ button: UIButton, transform: CGAffineTransform) {
-        UIView.animate(withDuration: 0.4,
+        UIView.animate(withDuration: 0.2,
                        delay: 0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 3,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 5,
                        options: [.curveEaseInOut],
                        animations: {
             button.transform = transform
@@ -107,7 +107,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @objc private func animateDown(sender: UIButton) {
-        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
+        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9))
     }
     
     @objc private func animateUp(sender: UIButton) {
