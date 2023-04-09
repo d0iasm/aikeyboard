@@ -40,7 +40,7 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(button)
         button.frame = CGRect(x: 0, y: 0, width: BUTTON_DIAMETER, height: BUTTON_DIAMETER)
         button.clipsToBounds = true
-        button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
+        button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchDown)
         button.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
         button.addTarget(self, action: #selector(animateUp), for: [.touchUpOutside, .touchCancel, .touchDragExit, .touchUpInside])
         
