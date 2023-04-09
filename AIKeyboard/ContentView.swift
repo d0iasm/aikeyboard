@@ -29,21 +29,14 @@ struct ContentView: View {
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     HStack(spacing: 0) {
-                                        NavigationLink(destination: DescriptionView()) {
-                                            Text("Privacy")
-                                                .font(.headline)
-                                                .foregroundColor(.accentColor)
-                                        }
-                                        NavigationLink(destination: DescriptionView()) {
-                                            Text("Terms")
-                                                .font(.headline)
-                                                .foregroundColor(.accentColor)
-                                        }
+                                        Link("Privacy", destination: URL(string: "https://aikeybord.studio.site/policy")!)
+                                            .font(.headline)
+                                        Link("Terms", destination: URL(string: "https://aikeybord.studio.site/")!)
+                                            .font(.headline)
                                     }
                                 }
                             }
                         ZStack{
-                            
                             Image("background_howtouse")
                                 .resizable()
                                 .scaledToFit()
