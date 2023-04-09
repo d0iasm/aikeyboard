@@ -8,7 +8,7 @@
 import UIKit
 import AudioToolbox
 
-let BUTTON_DIAMETER = 300;
+let BUTTON_DIAMETER = 330;
 
 class KeyboardViewController: UIInputViewController {
     override func updateViewConstraints() {
@@ -20,12 +20,13 @@ class KeyboardViewController: UIInputViewController {
                            toItem: nil,
                            attribute: .notAnAttribute,
                            multiplier: 0.0,
-                           constant: 150).isActive = true
+                           constant: 200).isActive = true
     }
     
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 1.0, green: 0.80, blue: 0.88, alpha: 1)
         setupButton()
         
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -40,6 +41,9 @@ class KeyboardViewController: UIInputViewController {
         button.frame = CGRect(x: 0, y: 0, width: BUTTON_DIAMETER, height: BUTTON_DIAMETER)
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(sendRequestToOpenAI), for: .touchUpInside)
+        button.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
+        button.addTarget(self, action: #selector(animateUp), for: [.touchUpOutside, .touchCancel, .touchDragExit, .touchUpInside])
+        
         let icon = UIImage(named: "icon1_256.png")
         //let icon2 = UIImage(named: "icon2_256.png")
         
@@ -47,7 +51,7 @@ class KeyboardViewController: UIInputViewController {
         button.setImage(icon, for: .normal)
         //button.setImage(icon3, for: .highlighted)
         //button.setImage(icon3, for: .selected)
-
+        
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = false
     }
@@ -83,12 +87,31 @@ class KeyboardViewController: UIInputViewController {
     """
     }
     
+    private func animate(_ button: UIButton, transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.4,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 3,
+                       options: [.curveEaseInOut],
+                       animations: {
+            button.transform = transform
+        }, completion: nil)
+    }
+    
     @objc func orientationDidChange() {
         if UIDevice.current.orientation.isLandscape {
             print("横向き")
         } else if UIDevice.current.orientation.isPortrait {
             print("縦向き")
         }
+    }
+    
+    @objc private func animateDown(sender: UIButton) {
+        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
+    }
+    
+    @objc private func animateUp(sender: UIButton) {
+        animate(sender, transform: .identity)
     }
     
     @objc func sendRequestToOpenAI(sender: UIButton) {

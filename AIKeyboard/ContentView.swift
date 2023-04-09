@@ -58,9 +58,9 @@ struct ContentView: View {
                                 Text("絵文字キーボード")
                                     .foregroundColor(.black)
                                     .bold()
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 18))
                                 Text("あなたの文章をAIが読み込んで勝手に絵文字を追加します！絵文字があるだけでチャットでの印象が大きく変わるかも！？")
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
@@ -74,7 +74,7 @@ struct ContentView: View {
                                             .frame(width: geo.size.width * 0.8, alignment: .center)
                                         Text("キーボードを追加")
                                             .foregroundColor(.black)
-                                            .font(.system(size: 20))
+                                            .font(.system(size: 18))
                                     }
                                 }
                             }.frame(width: geo.size.width * 0.8)
@@ -89,9 +89,9 @@ struct ContentView: View {
                                 Text("日本語→英語キーボード")
                                     .foregroundColor(.black)
                                     .bold()
-                                    .font(.system(size: 24))
+                                    .font(.system(size: 18))
                                 Text("もう翻訳アプリを立ち上げる必要なし！日本語で打った文章がボタン一つでネイティブの英語に変わります！")
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
@@ -105,7 +105,7 @@ struct ContentView: View {
                                             .frame(width: geo.size.width * 0.8, alignment: .center)
                                         Text("キーボードを追加")
                                             .foregroundColor(.black)
-                                            .font(.system(size: 20))
+                                            .font(.system(size: 18))
                                     }
                                 }
                             }.frame(width: geo.size.width * 0.8)
@@ -120,9 +120,9 @@ struct ContentView: View {
                                 Text("伝わるキーボード")
                                     .foregroundColor(.black)
                                     .bold()
-                                    .font(.system(size: 24))
+                                    .font(.system(size: 18))
                                 Text("仕事の文章や長文をわかりやすく伝えよう！誰にでも分かりやすく、論理的に、文章を作り直します。")
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
@@ -136,7 +136,7 @@ struct ContentView: View {
                                             .frame(width: geo.size.width * 0.8, alignment: .center)
                                         Text("キーボードを追加")
                                             .foregroundColor(.black)
-                                            .font(.system(size: 20))
+                                            .font(.system(size: 18))
                                     }
                                 }
                             }.frame(width: geo.size.width * 0.8)
