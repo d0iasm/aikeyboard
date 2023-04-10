@@ -11,7 +11,7 @@
 			<key>PrefersRightToLeft</key>
 			<false/>
 			<key>PrimaryLanguage</key>
-			<string>&quot;&quot;</string>
+			<string>""</string>
 			<key>RequestsOpenAccess</key>
 			<true/>
 		</dict>

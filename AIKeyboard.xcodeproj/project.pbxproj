@@ -581,7 +581,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoFormatter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoFormatter;
+				INFOPLIST_KEY_CFBundleDisplayName = "伝わる";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,7 +608,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoFormatter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoFormatter;
+				INFOPLIST_KEY_CFBundleDisplayName = "伝わる";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -635,7 +635,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoTranslator/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoTranslator;
+				INFOPLIST_KEY_CFBundleDisplayName = "英語変換";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -662,7 +662,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoTranslator/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoTranslator;
+				INFOPLIST_KEY_CFBundleDisplayName = "英語変換";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -949,7 +949,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoEmoji/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoEmoji;
+				INFOPLIST_KEY_CFBundleDisplayName = "絵文字";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -975,7 +975,7 @@
 				DEVELOPMENT_TEAM = TMFTYXG38Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoEmoji/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoEmoji;
+				INFOPLIST_KEY_CFBundleDisplayName = "絵文字";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

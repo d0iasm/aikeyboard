@@ -42,7 +42,7 @@ struct ContentView: View {
                                 .scaledToFit()
                                 .frame(width: geo.size.width * 0.9, alignment: .center)
                             NavigationLink(destination: DescriptionView()) {
-                                Text("How to Use")
+                                Text("初めての方はこちら")
                                     .foregroundColor(.white)
                                     .bold()
                                     .font(.system(size: 24))

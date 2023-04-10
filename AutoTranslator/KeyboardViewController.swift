@@ -24,12 +24,9 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override func viewDidLoad() {
-        print("viewDidLoad")
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 0.8, green: 0.88, blue: 1, alpha: 1)
         setupButton()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func setupButton() {
@@ -71,7 +68,7 @@ class KeyboardViewController: UIInputViewController {
             "messages": [
                 {
                     "role": "system",
-                    "content": "Translate the user text into English. If the user's text is English, translate the text into Japanese."
+                    "content": "Translate the user text into English."
                 },
                 {
                     "role": "user",
@@ -91,14 +88,6 @@ class KeyboardViewController: UIInputViewController {
                        animations: {
             button.transform = transform
         }, completion: nil)
-    }
-    
-    @objc func orientationDidChange() {
-        if UIDevice.current.orientation.isLandscape {
-            print("横向き")
-        } else if UIDevice.current.orientation.isPortrait {
-            print("縦向き")
-        }
     }
     
     @objc private func animateDown(sender: UIButton) {

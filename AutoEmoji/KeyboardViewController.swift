@@ -24,12 +24,9 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override func viewDidLoad() {
-        print("viewDidLoad")
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 1.0, green: 0.80, blue: 0.88, alpha: 1)
         setupButton()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func setupButton() {
@@ -93,14 +90,6 @@ class KeyboardViewController: UIInputViewController {
         }, completion: nil)
     }
     
-    @objc func orientationDidChange() {
-        if UIDevice.current.orientation.isLandscape {
-            print("横向き")
-        } else if UIDevice.current.orientation.isPortrait {
-            print("縦向き")
-        }
-    }
-    
     @objc private func animateDown(sender: UIButton) {
         animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9))
     }
@@ -110,12 +99,8 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @objc func sendRequestToOpenAI(sender: UIButton) {
-        //AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-        
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
-        //let generator = UIImpactFeedbackGenerator(style: .light)
-        // generator.impactOccurred()
         
         print("send a request to OpenAI API")
         let selectedText = textDocumentProxy.selectedText
