@@ -86,7 +86,7 @@ struct ContentView: View {
                                 .frame(width: geo.size.width * 0.9, alignment: .center)
                             VStack (alignment: .leading,
                                     spacing: 10){
-                                Text("日本語→英語キーボード")
+                                Text("英語変換キーボード")
                                     .foregroundColor(.black)
                                     .bold()
                                     .font(.system(size: 18))
