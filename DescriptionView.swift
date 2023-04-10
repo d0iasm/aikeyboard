@@ -57,6 +57,10 @@ struct DescriptionView: View {
                                 .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.6, alignment: .center)
                                 .opacity(0.7)
                             VStack (spacing: 40) {
+                                Image("description" + String(pageNumber))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.width * 0.65, alignment: .center)
                                 Text(getDescriptionText())
                                     .foregroundColor(.black)
                                 Button(action: {

@@ -23,7 +23,7 @@ struct ContentView: View {
                         HStack {
                             Image("title").resizable()
                                 .scaledToFit()
-                                .frame(width: geo.size.width * 0.35)
+                                .frame(width: geo.size.width * 0.3)
                             Spacer()
                         }.frame(width: geo.size.width * 0.7)
                             .toolbar {
@@ -35,7 +35,7 @@ struct ContentView: View {
                                             .font(.headline)
                                     }
                                 }
-                            }
+                            }.padding(.bottom, 20)
                         ZStack{
                             Image("background_howtouse")
                                 .resizable()
@@ -62,6 +62,7 @@ struct ContentView: View {
                                 Text("あなたの文章をAIが読み込んで勝手に絵文字を追加します！絵文字があるだけでチャットでの印象が大きく変わるかも！？")
                                     .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
+                                    .padding(.bottom, 5)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
                                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -71,13 +72,13 @@ struct ContentView: View {
                                         Image("btn_pink")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                            .frame(width: geo.size.width * 0.75, alignment: .center)
                                         Text("キーボードを追加")
-                                            .foregroundColor(.black)
+                                            .foregroundColor(.white)
                                             .font(.system(size: 18))
                                     }
                                 }
-                            }.frame(width: geo.size.width * 0.8)
+                            }.frame(width: geo.size.width * 0.75)
                         }
                         ZStack{
                             Image("bg_translater")
@@ -93,6 +94,7 @@ struct ContentView: View {
                                 Text("もう翻訳アプリを立ち上げる必要なし！日本語で打った文章がボタン一つでネイティブの英語に変わります！")
                                     .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
+                                    .padding(.bottom, 5)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
                                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -102,13 +104,13 @@ struct ContentView: View {
                                         Image("btn_blue")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                            .frame(width: geo.size.width * 0.75, alignment: .center)
                                         Text("キーボードを追加")
-                                            .foregroundColor(.black)
+                                            .foregroundColor(.white)
                                             .font(.system(size: 18))
                                     }
                                 }
-                            }.frame(width: geo.size.width * 0.8)
+                            }.frame(width: geo.size.width * 0.75)
                         }
                         ZStack{
                             Image("bg_formatter")
@@ -124,6 +126,7 @@ struct ContentView: View {
                                 Text("仕事の文章や長文をわかりやすく伝えよう！誰にでも分かりやすく、論理的に、文章を作り直します。")
                                     .font(.system(size: 14))
                                     .fixedSize(horizontal: false, vertical: true)
+                                    .padding(.bottom, 5)
                                 Button(action: {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
                                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -133,13 +136,13 @@ struct ContentView: View {
                                         Image("btn_yellow")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: geo.size.width * 0.8, alignment: .center)
+                                            .frame(width: geo.size.width * 0.75, alignment: .center)
                                         Text("キーボードを追加")
                                             .foregroundColor(.black)
                                             .font(.system(size: 18))
                                     }
                                 }
-                            }.frame(width: geo.size.width * 0.8)
+                            }.frame(width: geo.size.width * 0.75)
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                         .edgesIgnoringSafeArea(.all)

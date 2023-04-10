@@ -41,7 +41,7 @@ class KeyboardViewController: UIInputViewController {
         button.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
         button.addTarget(self, action: #selector(animateUp), for: [.touchUpOutside, .touchCancel, .touchDragExit, .touchUpInside])
         
-        let icon = UIImage(named: "icon_256.png")
+        let icon = UIImage(named: "btn.png")
         button.setImage(icon, for: .normal)
         
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
